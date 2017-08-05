@@ -1,0 +1,10 @@
+{
+    "name": "root/twitter",
+    "authors": [
+        {
+            "name": "comp",
+            "email": "igorshinal@gmail.com"
+        }
+    ],
+    "require": {}
+}
