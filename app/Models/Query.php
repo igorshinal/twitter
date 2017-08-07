@@ -1,11 +1,21 @@
 <?php
 
 namespace Models;
+use Database\Singleton;
 
 class Query
 {
-    public function __construct()
+
+    public function getData()
     {
-       echo 'ok';
+        $query = "Select * from `post`";
+        $res = Singleton::getInstance()->connect($query);
+        return $res;
+
     }
+
+
+
+
+
 }

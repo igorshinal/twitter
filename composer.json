@@ -11,7 +11,8 @@
         "classmap": [
             "app/Models",
             "app/Controllers",
-            "app/Views"
+            "app/Views",
+            "app/Database"
         ]
     }
 }
