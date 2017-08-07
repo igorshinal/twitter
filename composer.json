@@ -12,7 +12,8 @@
             "app/Models",
             "app/Controllers",
             "app/Views",
-            "app/Database"
+            "app/Database",
+            "app/Route"
         ]
     }
 }

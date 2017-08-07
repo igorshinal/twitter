@@ -5,7 +5,6 @@ use Database\Singleton;
 
 class Query
 {
-
     public function getData()
     {
         $query = "Select * from `post`";
