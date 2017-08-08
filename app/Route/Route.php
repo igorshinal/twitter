@@ -3,14 +3,20 @@ namespace Route;
 
 class Route
 {
-    public function __construct()
+    public function start()
     {
-        $url = $this->parseUrl();
-    }
-    public function parseUrl() {
-        if (isset($_GET['url'])) {
-        return $url = explode('/', filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL));
+        $route = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
+        $routing = [
+            "/"        => ['controller' => 'Home', 'action' => 'index'],
+            "/article" => ['controller' => 'Home', 'action' => 'article'],
+        ];
+        if (isset($routing[$route])) {
+            $controller = 'Controllers\\' . $routing[$route]['controller'];
+            $controller_obj = new $controller();
+            $controller_obj->$routing[$route]['action']();
+        }else {
+            echo 'not route';
         }
     }
 }
