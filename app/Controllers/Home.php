@@ -33,5 +33,19 @@ class Home extends Controller
 
     }
 
+    public function edit()
+    {
+        $update_request = $_POST['body'];
+        $update_request_id = $_POST['id'];
+        if ($_POST['body'] == '') {
+            echo 1;
+        }else {
+            $basa_update = new Query;
+            $responce_update = $basa_update->postData($update_request, $update_request_id);
+            $json_update = json_encode($responce_update);
+            echo $json_update;
+        }
+    }
+
 }
 

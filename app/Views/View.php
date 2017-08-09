@@ -13,15 +13,19 @@
 
 
 <div class="result">
+
     <?php foreach ($data as $data) { ?>
-        <div class="twit"><p><?php echo $data['body']; ?></p>
-            <p><?php echo $data['data']; ?></p><input type="hidden" value=<?php echo $data['id']; ?> ></div>
+
+        <div class="twit"><p class="od" data-id=<?php echo $data['id']; ?>><?php echo $data['body']; ?></p>
+            <p><?php echo $data['data']; ?></p>
+            <span><input class="btn-edit" data-id=<?php echo $data['id']; ?> type="submit" value="Edit"></span>
+            <span><input class="btn-delete" type="submit" value="Delete"></span>
+        </div>
     <?php } ?>
 </div>
 
 <p><textarea id="body" rows="10" cols="45" name="text"></textarea></p>
 <p><input class="btn-ajax" type="submit" value="Отправить"></p>
-<div class="err"></div>
 
 <script src="../public/main.js"></script>
 </body>

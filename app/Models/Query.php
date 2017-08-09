@@ -28,6 +28,20 @@ class Query
 
     }
 
+    public function updateData($update_body, $update_id)
+    {
+        $content_update_body = $update_body;
+        $content_update_id = $update_id;
+        $dates = date('l jS \of F Y h:i:s A');
+        $query_update_1 = "INSERT INTO `post`(body, data) VALUES ('$content_update_body ', '$dates')";
+        $query_update_2 = "Select id, body, data from `post` WHERE id= '$content_update_id' ";
+        Singleton::getInstance()->connect($query_update_1);
+        $resp_update = Singleton::getInstance()->connect($query_update_2);
+        $resp_parse_update = $resp_update->fetchAll();
+        return $resp_parse_update;
+
+    }
+
 
 
 

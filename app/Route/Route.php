@@ -10,6 +10,7 @@ class Route
         $routing = [
             "/"        => ['controller' => 'Home', 'action' => 'index'],
             "/article" => ['controller' => 'Home', 'action' => 'article'],
+            "/edit" => ['controller' => 'Home', 'action' => 'edit'],
         ];
         if (isset($routing[$route])) {
             $controller = 'Controllers\\' . $routing[$route]['controller'];
