@@ -27,9 +27,10 @@ class Singleton {
             echo $e->getMessage();
             die();
         }
+
         $query = $handler->query($q);
-        $row = $query->fetchAll();
-        return $row;
+
+        return $query;
 
     }
 

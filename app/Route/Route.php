@@ -16,7 +16,7 @@ class Route
             $controller_obj = new $controller();
             $controller_obj->$routing[$route]['action']();
         }else {
-            echo 'not route';
+            echo 'not routes';
         }
     }
 }

@@ -7,6 +7,10 @@ class Controller {
     {
         require_once './app/Views/' . $view . '.php';
     }
+    public function view_common($view)
+    {
+        require_once './app/Views/' . $view . '.php';
+    }
 
 
 }

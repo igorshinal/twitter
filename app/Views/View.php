@@ -10,22 +10,18 @@
 
 </head>
 <body>
-<?php foreach ($data as $data) {?>
-    <p><?php echo $data['body'];?></p>
-    <span><?php echo $data['data']; ?></span>
-<?php } ?>
 
 
-<div class="result"></div>
+<div class="result">
+    <?php foreach ($data as $data) { ?>
+        <div class="twit"><p><?php echo $data['body']; ?></p>
+            <p><?php echo $data['data']; ?></p><input type="hidden" value=<?php echo $data['id']; ?> ></div>
+    <?php } ?>
+</div>
 
-
-
-    <p><b>Введите ваш твит</b></p>
-    <p><textarea rows="10" cols="45" class="body" name="text"></textarea></p>
-    <p><input class="btn-ajax" type="submit" value="Отправить"></p>
-
-
-
+<p><textarea id="body" rows="10" cols="45" name="text"></textarea></p>
+<p><input class="btn-ajax" type="submit" value="Отправить"></p>
+<div class="err"></div>
 
 <script src="../public/main.js"></script>
 </body>
