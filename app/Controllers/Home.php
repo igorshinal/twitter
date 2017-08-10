@@ -13,7 +13,6 @@ class Home extends Controller
         $basa_get = new Query;
         $responce_get = $basa_get->getData();
         $this->view('View', array_reverse($responce_get));
-//        $this->view_common('View');
     }
 
     public function article()

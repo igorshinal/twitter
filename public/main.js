@@ -35,11 +35,7 @@ $(document).ready(function () {
         var parentDiv = parent.parent();
         var divChild = parentDiv.children();
         var valBody = divChild.html();
-        var elDate = new Date();
-        parentDiv.html('<p><textarea class="area-edit" rows="5" cols="45" name="text">' + valBody + '</textarea></p><span><input class="btn-save" type="submit" value="Save"></span><span><input class="btn-close" type="submit" value="Close"></span>');
-        $('body').on('click', '.btn-close', function () {
-            parentDiv.html('<div class=' + valHid + '><p data-id=' + valHid + '>' + valBody + '</p><p>'+elDate+'</p><span><input class="btn-edit" type="submit" data-id=' + valHid   + ' value="Edit"></span><span><input class="btn-delete" type="submit" value="Delete"></span></div>');
-        });
+        parentDiv.html('<p><textarea class="area-edit" rows="5" cols="45" name="text">' + valBody + '</textarea></p><span><input class="btn-save" type="submit" value="Save"></span>');
     });
 
     $('body').on('click', '.btn-save', function () {
