@@ -46,5 +46,16 @@ class Home extends Controller
         }
     }
 
+
+    public function delete()
+    {
+        $delete_request_id = $_POST['id'];
+        $basa_delete = new Query;
+        $basa_delete->deleteData($delete_request_id);
+
+
+    }
+
+
 }
 

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="../public/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
@@ -19,13 +20,13 @@
         <div class=<?php echo $data['id']; ?>><p class="od" data-id=<?php echo $data['id']; ?>><?php echo $data['body']; ?></p>
             <p><?php echo $data['data']; ?></p>
             <span><input class="btn-edit" data-id=<?php echo $data['id']; ?> type="submit" value="Edit"></span>
-            <span><input class="btn-delete" type="submit" value="Delete"></span>
+            <span><input class="btn-delete" data-id=<?php echo $data['id']; ?> type="submit" value="Delete"></span>
         </div>
     <?php } ?>
 </div>
 
 <p><textarea id="body" rows="10" cols="45" name="text"></textarea></p>
-<p><input class="btn-ajax" type="submit" value="Отправить"></p>
+<p><input class="btn-ajax" type="submit" value="Send"></p>
 
 <script src="../public/main.js"></script>
 </body>

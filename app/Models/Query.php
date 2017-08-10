@@ -23,7 +23,6 @@ class Query
         $query_1 = "Select * from `post` order by id  DESC limit 2";
         $res = Singleton::getInstance()->connect($query_1);
         $row = $res->fetchAll();
-
         return $row;
 
     }
@@ -39,6 +38,14 @@ class Query
         $resp_update = Singleton::getInstance()->connect($query_update_2);
         $resp_parse_update = $resp_update->fetchAll();
         return $resp_parse_update;
+
+    }
+
+    public function deleteData($delete_body)
+    {
+        $content_delete_id = $delete_body;
+        $query_delete = "DELETE FROM `post` WHERE id='$content_delete_id' ";
+        Singleton::getInstance()->connect($query_delete);
 
     }
 

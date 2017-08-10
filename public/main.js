@@ -11,11 +11,11 @@ $(document).ready(function () {
             },
             success: function (data) {
                 if (data == 1) {
-                    alert('Текстовое поле не может быть пустым.');
+                    $('#body').val('Текстовое поле не может быть пустым.');
                 } else {
                     var jsonParser = JSON.parse(data);
                     $.each(jsonParser, function (key, value) {
-                        $('.result').append('<div class=' + value['id'] + '><p data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" type="submit" value="Delete"></span></div>');
+                        $('.result').append('<div class=' + value['id'] + '><p data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" data-id=' + value['id'] + ' type="submit" value="Delete"></span></div>');
                         $('#body').val('');
                     });
 
@@ -50,19 +50,36 @@ $(document).ready(function () {
                 body: area_2,
             },
             success: function (data) {
-                console.log(data);
                 if (data == 1) {
-                    alert('Текстовое поле не может быть пустым.');
+                    $('.' + valHid + '.area-edit').val('Текстовое поле не может быть пустым.');
                 } else {
                     var jsonParser_2 = JSON.parse(data);
                     $.each(jsonParser_2, function (key, value) {
-                        $('.' + valHid).html('<div class=' + valHid + '><p class="od" data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" type="submit" value="Delete"></span></div>');
+                        $('.' + valHid).html('<div class=' + valHid + '><p class="od" data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" data-id=' + value['id'] + ' type="submit" value="Delete"></span></div>');
                     });
 
                 }
             }
         });
     });
+
+    $('body').on('click', '.btn-delete', function () {
+        var btn_del_id = $(this).data('id');
+        $.ajax({
+            type: 'POST',
+            url: '/delete',
+            async: true,
+            cache: false,
+            data: {
+                id: btn_del_id,
+            },
+            success: function (data) {
+                $('.' + btn_del_id).hide();
+            }
+        });
+    });
+
+
 
 
     });
