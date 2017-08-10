@@ -15,7 +15,7 @@ $(document).ready(function () {
                 } else {
                     var jsonParser = JSON.parse(data);
                     $.each(jsonParser, function (key, value) {
-                        $('.result').append('<div class="twit"><p class="od" data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" type="submit" value="Delete"></span></div>');
+                        $('.result').append('<div class=' + value['id'] + '><p data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" type="submit" value="Delete"></span></div>');
                         $('#body').val('');
                     });
 
@@ -38,11 +38,12 @@ $(document).ready(function () {
         var elDate = new Date();
         parentDiv.html('<p><textarea class="area-edit" rows="5" cols="45" name="text">' + valBody + '</textarea></p><span><input class="btn-save" type="submit" value="Save"></span><span><input class="btn-close" type="submit" value="Close"></span>');
         $('body').on('click', '.btn-close', function () {
-            parentDiv.html('<div class="twit"><p class="od" data-id=' + valHid + '>' + valBody + '</p><p>'+elDate+'</p><span><input class="btn-edit" type="submit" data-id=' + valHid   + ' value="Edit"></span><span><input class="btn-delete" type="submit" value="Delete"></span></div>');
+            parentDiv.html('<div class=' + valHid + '><p data-id=' + valHid + '>' + valBody + '</p><p>'+elDate+'</p><span><input class="btn-edit" type="submit" data-id=' + valHid   + ' value="Edit"></span><span><input class="btn-delete" type="submit" value="Delete"></span></div>');
         });
     });
 
     $('body').on('click', '.btn-save', function () {
+        var area_2 = $('.area-edit').val();
         $.ajax({
             type: 'POST',
             url: '/edit',
@@ -50,7 +51,7 @@ $(document).ready(function () {
             cache: false,
             data: {
                 id: valHid,
-                body: 'ooooo',
+                body: area_2,
             },
             success: function (data) {
                 console.log(data);
@@ -59,7 +60,7 @@ $(document).ready(function () {
                 } else {
                     var jsonParser_2 = JSON.parse(data);
                     $.each(jsonParser_2, function (key, value) {
-                        $('.result').append('<div class="twit"><p class="od" data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" type="submit" value="Delete"></span></div>');
+                        $('.' + valHid).html('<div class=' + valHid + '><p class="od" data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" type="submit" value="Delete"></span></div>');
                     });
 
                 }

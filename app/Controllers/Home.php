@@ -41,7 +41,7 @@ class Home extends Controller
             echo 1;
         }else {
             $basa_update = new Query;
-            $responce_update = $basa_update->postData($update_request, $update_request_id);
+            $responce_update = $basa_update->updateData($update_request, $update_request_id);
             $json_update = json_encode($responce_update);
             echo $json_update;
         }

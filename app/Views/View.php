@@ -16,7 +16,7 @@
 
     <?php foreach ($data as $data) { ?>
 
-        <div class="twit"><p class="od" data-id=<?php echo $data['id']; ?>><?php echo $data['body']; ?></p>
+        <div class=<?php echo $data['id']; ?>><p class="od" data-id=<?php echo $data['id']; ?>><?php echo $data['body']; ?></p>
             <p><?php echo $data['data']; ?></p>
             <span><input class="btn-edit" data-id=<?php echo $data['id']; ?> type="submit" value="Edit"></span>
             <span><input class="btn-delete" type="submit" value="Delete"></span>
