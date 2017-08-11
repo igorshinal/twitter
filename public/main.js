@@ -15,9 +15,10 @@ $(document).ready(function () {
                 } else {
                     var jsonParser = JSON.parse(data);
                     $.each(jsonParser, function (key, value) {
-                        $('.result').append('<div class=' + value['id'] + '><p data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" data-id=' + value['id'] + ' type="submit" value="Delete"></span></div>');
+                        $('.result').append('<div id="main" class=' + value['id'] + '><p class="od" data-id=' + value['id'] + '>' + value['body'] + '</p><p class="datas">' + value['data'] + '</p><span><input class="btn-edit btn-css" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span class="del-js"><input class="btn-delete btn-css" data-id=' + value['id'] + ' type="submit" value="Delete"></span></div>');
                         $('#body').val('');
                     });
+                    $('.del-js').css('margin-left', 279);
 
                 }
             }
@@ -35,7 +36,7 @@ $(document).ready(function () {
         var parentDiv = parent.parent();
         var divChild = parentDiv.children();
         var valBody = divChild.html();
-        parentDiv.html('<p><textarea class="area-edit" rows="5" cols="45" name="text">' + valBody + '</textarea></p><span><input class="btn-save" type="submit" value="Save"></span>');
+        parentDiv.html('<p class="oop"><textarea class="area-edit" rows="5" cols="45" name="text">' + valBody + '</textarea></p><span><input class="btn-save btn-css" type="submit" value="Save"></span>');
     });
 
     $('body').on('click', '.btn-save', function () {
@@ -55,7 +56,7 @@ $(document).ready(function () {
                 } else {
                     var jsonParser_2 = JSON.parse(data);
                     $.each(jsonParser_2, function (key, value) {
-                        $('.' + valHid).html('<div class=' + valHid + '><p class="od" data-id=' + value['id'] + '>' + value['body'] + '</p><p>' + value['data'] + '</p><span><input class="btn-edit" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span><input class="btn-delete" data-id=' + value['id'] + ' type="submit" value="Delete"></span></div>');
+                        $('.' + valHid).html('<div class=' + valHid + '><p class="od" data-id=' + value['id'] + '>' + value['body'] + '</p><p class="datas">' + value['data'] + '</p><span><input class="btn-edit btn-css" type="submit" data-id=' + value['id'] + ' value="Edit"></span><span class="del"><input class="btn-delete btn-css" data-id=' + value['id'] + ' type="submit" value="Delete"></span></div>');
                     });
 
                 }
@@ -74,7 +75,7 @@ $(document).ready(function () {
                 id: btn_del_id,
             },
             success: function (data) {
-                $('.' + btn_del_id).hide();
+                $('.' + btn_del_id).remove();
             }
         });
     });

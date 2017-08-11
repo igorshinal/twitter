@@ -1,3 +1,55 @@
 body {
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Exo 2', sans-serif;
+}
+.arrea {
+    float: left;
+
+
+}
+
+.od {
+    padding: 4px;
+}
+#main {
+    color: black;
+    width: 480px;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+    border: 1px dashed #e5ebf1;
+}
+
+.btn-css {
+    width: 99px;
+    padding: 13px;
+    border: none;
+    color: white;
+    background: #00BFFF;
+    outline: none;
+}
+.datas {
+    font-size: 11px;
+    margin-left: 281px;
+    opacity: 0.3;
+}
+textarea {
+    border-color: #00BFFF;
+    outline: none;
+    margin: 0;
+}
+.del {
+    margin-left: 275px;
+}
+.oop textarea {
+    margin: 0 0 10px 0;
+    border-bottom: 1px dashed #e5ebf1;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+
+}
+h6 {
+    text-transform: uppercase;
+    opacity: 0.3;
+    margin-top: 50px!important;
+    font-family: 'Anton', sans-serif;
 }

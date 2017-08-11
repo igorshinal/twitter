@@ -20,7 +20,7 @@ class Query
 
     public function getData()
     {
-        $query_1 = "Select * from `post` order by id  DESC limit 2";
+        $query_1 = "Select * from `post` order by id  DESC limit 25";
         $res = Singleton::getInstance()->connect($query_1);
         $row = $res->fetchAll();
         return $row;
