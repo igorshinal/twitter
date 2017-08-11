@@ -5,8 +5,11 @@ body {
 .arrea {
     float: left;
 }
+.arrea textarea {
+    width: 380px;
+}
 .wrap {
-    margin-left: 300px;
+    margin-left: 10px;
 }
 .middle {
     margin-top: 50px;

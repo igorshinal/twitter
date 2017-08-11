@@ -6,7 +6,9 @@
             "email": "igorshinal@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "ext-mysql": "*"
+    },
     "autoload": {
         "classmap": [
             "app/Models",

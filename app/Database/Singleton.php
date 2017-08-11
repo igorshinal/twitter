@@ -21,7 +21,7 @@ class Singleton {
     public function connect($q)
     {
         try {
-            $handler = new PDO('mysql:host=127.0.0.1;dbname=twitter', 'root', '000');
+            $handler = new PDO('mysql:host=us-cdbr-iron-east-05.cleardb.net;dbname=heroku_1bfca7da781d565', 'b1f0985d61e157', 'ac02b48f');
             $handler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo $e->getMessage();
