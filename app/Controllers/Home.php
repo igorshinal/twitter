@@ -10,52 +10,18 @@ class Home extends Controller
 
     public function index()
     {
-        $basa_get = new Query;
-        $responce_get = $basa_get->getData();
-        $this->view('View', array_reverse($responce_get));
+        return $this->view('View');
     }
 
-    public function article()
+    public function set()
     {
-
-        $post_request = $_POST['body'];
-        if ($_POST['body'] == '') {
-            echo 1;
-        }else {
-            $basa = new Query;
-            $responce = $basa->postData($post_request);
-            $json_post = json_encode($responce);
-            echo $json_post;
+        if (empty($_POST['currency'])) {
+            echo 'You must type a currency';
         }
 
 
 
-    }
-
-    public function edit()
-    {
-        $update_request = $_POST['body'];
-        $update_request_id = $_POST['id'];
-        if ($_POST['body'] == '') {
-            echo 1;
-        }else {
-            $basa_update = new Query;
-            $responce_update = $basa_update->updateData($update_request, $update_request_id);
-            $json_update = json_encode($responce_update);
-            echo $json_update;
-        }
-    }
-
-
-    public function delete()
-    {
-        $delete_request_id = $_POST['id'];
-        $basa_delete = new Query;
-        $basa_delete->deleteData($delete_request_id);
-
 
     }
-
-
 }
 

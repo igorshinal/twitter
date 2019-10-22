@@ -9,14 +9,14 @@ class Route
 
         $routing = [
             "/"        => ['controller' => 'Home', 'action' => 'index'],
-            "/article" => ['controller' => 'Home', 'action' => 'article'],
-            "/edit" => ['controller' => 'Home', 'action' => 'edit'],
-            "/delete" => ['controller' => 'Home', 'action' => 'delete'],
+            "/set"        => ['controller' => 'Home', 'action' => 'set'],
+            "/curl"        => ['controller' => 'Currency', 'action' => 'cURL'],
         ];
         if (isset($routing[$route])) {
             $controller = 'Controllers\\' . $routing[$route]['controller'];
             $controller_obj = new $controller();
-            $controller_obj->$routing[$route]['action']();
+            $index = $routing[$route]['action'];
+            $controller_obj->$index();
         }else {
             echo 'not routes';
         }

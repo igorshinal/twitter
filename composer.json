@@ -7,7 +7,7 @@
         }
     ],
     "require": {
-        "ext-mysql": "*"
+
     },
     "autoload": {
         "classmap": [
